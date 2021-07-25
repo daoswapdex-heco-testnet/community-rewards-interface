@@ -1,1 +1,1 @@
-# Daoswap.cc HECO offical Interface
+# Daoswap HECO Community Rewards

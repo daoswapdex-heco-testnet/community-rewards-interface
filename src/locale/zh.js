@@ -108,5 +108,8 @@ export default {
     "The amount is be gt zero": "提取额度必须大于0",
     "Invalid amount": "不可用的数值",
     "The amount is required": "请填写提取额度"
-  }
+  },
+
+  DAO: "DAO",
+  DAT: "DAT"
 };

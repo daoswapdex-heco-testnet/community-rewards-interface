@@ -18,6 +18,35 @@
         width="100%"
       />
 
+      <v-spacer />
+
+      <div>
+        <v-tabs
+          class="hidden-sm-and-down"
+          optional
+          background-color="transparent"
+        >
+          <v-tab
+            to="/"
+            :ripple="false"
+            class="font-weight-bold"
+            min-width="96"
+            text
+            >{{ $t("DAO") }}</v-tab
+          >
+          <v-tab
+            to="/dat"
+            :ripple="false"
+            class="font-weight-bold"
+            min-width="96"
+            text
+            >{{ $t("DAT") }}</v-tab
+          >
+        </v-tabs>
+      </div>
+
+      <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer" />
+
       <!-- 多语言切换 -->
       <!-- <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -35,6 +64,19 @@
         </v-list>
       </v-menu> -->
     </v-app-bar>
+
+    <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-list shaped>
+        <v-list-item-group v-model="group" color="#93B954">
+          <v-list-item to="/">
+            <v-list-item-title>{{ $t("DAO") }}</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/dat">
+            <v-list-item-title>{{ $t("DAT") }}</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
   </div>
 </template>
 
@@ -53,7 +95,11 @@ export default {
         locale: "en",
         title: "English"
       }
-    ]
+    ],
+    // 导航
+    drawer: false,
+    group: null,
+    items: ["Home", "Pro"]
   }),
   methods: {
     changeLang(locale) {

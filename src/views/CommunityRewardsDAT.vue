@@ -124,13 +124,13 @@
 import { validationMixin } from "vuelidate";
 import { required, decimal } from "vuelidate/lib/validators";
 import clip from "@/utils/clipboard";
-import { CommunityRewardsContractAddress } from "@/constants";
+import { CommunityRewardsDATContractAddress } from "@/constants";
 import { getContract, weiToEther, etherToWei } from "@/utils/web3";
 // 引入合约 ABI 文件
-import CommunityRewards from "@/constants/contractJson/CommunityRewards.json";
+import CommunityRewardsDAT from "@/constants/contractJson/CommunityRewardsDAT.json";
 
 export default {
-  name: "CommunityRewards",
+  name: "CommunityRewardsDAT",
   mixins: [validationMixin],
   validations: {
     claimAmount: { required, decimal }
@@ -223,8 +223,8 @@ export default {
       this.loading = true;
       try {
         const contract = getContract(
-          CommunityRewards,
-          CommunityRewardsContractAddress,
+          CommunityRewardsDAT,
+          CommunityRewardsDATContractAddress,
           this.web3
         );
         const rewardsBalance = await contract.methods
@@ -251,8 +251,8 @@ export default {
         const claimAmount = etherToWei(this.claimAmount, this.web3);
         // 执行合约
         getContract(
-          CommunityRewards,
-          CommunityRewardsContractAddress,
+          CommunityRewardsDAT,
+          CommunityRewardsDATContractAddress,
           this.web3
         )
           .methods.claim(claimAmount)

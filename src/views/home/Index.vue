@@ -3,7 +3,7 @@
 import View from "@/views/View";
 
 // Mixins
-import LoadSections from "@/mixins/load-sections";
+// import LoadSections from "@/mixins/load-sections";
 
 export default {
   name: "Home",
@@ -12,16 +12,16 @@ export default {
 
   extends: View,
 
-  mixins: [
-    LoadSections([
-      "hero",
-      "theme-features",
-      "features",
-      "affiliates"
-      // "social-media",
-      // "pro-features"
-    ])
-  ],
+  // mixins: [
+  //   LoadSections([
+  //     "hero",
+  //     "theme-features",
+  //     "features",
+  //     "affiliates"
+  //     // "social-media",
+  //     // "pro-features"
+  //   ])
+  // ],
 
   props: {
     id: {

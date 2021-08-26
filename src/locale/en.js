@@ -110,5 +110,8 @@ export default {
     "The amount is be gt zero": "The amount is be gt zero",
     "Invalid amount": "Invalid amount",
     "The amount is required": "The amount is required"
-  }
+  },
+
+  DAO: "DAO",
+  DAT: "DAT"
 };

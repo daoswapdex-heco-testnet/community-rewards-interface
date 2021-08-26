@@ -16,9 +16,9 @@ async function subscribeProvider(provider) {
   provider.on("disconnect", () => {
     store.dispatch("web3/closeWallet");
   });
-  provider.on("accountsChanged", async () => {
-    // store.dispatch("web3/changeAddress", accounts[0]);
-    window.location.reload();
+  provider.on("accountsChanged", async accounts => {
+    store.dispatch("web3/changeAddress", accounts[0]);
+    // window.location.reload();
   });
   provider.on("chainChanged", () => {
     // store.dispatch("web3/changeChainId", chainId);
@@ -150,9 +150,10 @@ export function getContractByABI(contractABI, token, web3) {
  * 格式化Wei To Ether
  * @returns etherValue
  */
-export function weiToEther(amount, decimals) {
-  const decimalsVal = decimals || 18;
-  return amount / Math.pow(10, decimalsVal);
+export function weiToEther(amount, web3) {
+  return web3.utils.fromWei(amount, "ether");
+  // const decimalsVal = decimals || 18;
+  // return amount / Math.pow(10, decimalsVal);
 }
 
 /**

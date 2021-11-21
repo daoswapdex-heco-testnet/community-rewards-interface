@@ -42,6 +42,14 @@
             text
             >{{ $t("DAT") }}</v-tab
           >
+          <v-tab
+            to="/dst"
+            :ripple="false"
+            class="font-weight-bold"
+            min-width="96"
+            text
+            >{{ $t("DST") }}</v-tab
+          >
         </v-tabs>
       </div>
 
@@ -73,6 +81,9 @@
           </v-list-item>
           <v-list-item to="/dat">
             <v-list-item-title>{{ $t("DAT") }}</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/dst">
+            <v-list-item-title>{{ $t("DST") }}</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>

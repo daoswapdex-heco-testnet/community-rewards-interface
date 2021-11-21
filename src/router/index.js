@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import CommunityRewards from "../views/CommunityRewards.vue";
 import CommunityRewardsDAT from "../views/CommunityRewardsDAT.vue";
+import CommunityRewardsDSTApprove from "../views/CommunityRewardsDSTApprove.vue";
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,11 @@ const routes = [
         path: "/dat",
         name: "RewardsDAT",
         component: CommunityRewardsDAT
+      },
+      {
+        path: "/dst",
+        name: "RewardsDST",
+        component: CommunityRewardsDSTApprove
       }
     ]
   }

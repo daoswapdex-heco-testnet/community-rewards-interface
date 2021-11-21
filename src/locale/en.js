@@ -113,5 +113,6 @@ export default {
   },
 
   DAO: "DAO",
-  DAT: "DAT"
+  DAT: "DAT",
+  DST: "DST"
 };
